@@ -1,0 +1,12 @@
+﻿parametre,hypothese_V1
+type_violences,Violences intrafamiliales
+victimes_avec_un_enfant,"50% (10/20), un seul enfant, âge 0-10 ans"
+examen_medical_necessaire,20% (4/20)
+prise_en_charge_nocturne,70% (14/20)
+transport_necessaire,60% (12/20)
+taxi_disponible,80% visé parmi les cas nécessitant un transport; 10/12 dans cet échantillon
+hebergements_acceptant_enfant,50% (15/30)
+accueil_nuit_hebergements,"20/30, hypothèse de simulation V1 à ajuster"
+securite,Non chiffrée à ce stade; règle/périmètre à vérifier avant implémentation
+distances,À calculer ultérieurement depuis le lieu de prise en charge; coordonnées entièrement fictives
+avertissement,Toutes les données sont synthétiques et ne représentent pas des statistiques réelles

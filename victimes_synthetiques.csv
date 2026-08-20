@@ -1,0 +1,21 @@
+﻿victime_id,age,type_violences,examen_medical_necessaire,mobile_par_ses_moyens,accompagnee_enfant,age_enfant,heure_prise_en_charge,mise_a_abri_immediate,lieu_prise_en_charge_id,prise_en_charge_nocturne,taxi_disponible_si_necessaire
+V001,19,Violences intrafamiliales,Non,Non,Non,,22:30,Oui,P003,Oui,Oui
+V002,22,Violences intrafamiliales,Non,Non,Oui,6,23:25,Oui,P004,Oui,Oui
+V003,24,Violences intrafamiliales,Non,Oui,Non,,18:30,Oui,P005,Non,Non requis
+V004,27,Violences intrafamiliales,Oui,Non,Oui,3,20:45,Oui,P002,Oui,Oui
+V005,29,Violences intrafamiliales,Oui,Non,Oui,1,10:15,Oui,P001,Non,Oui
+V006,31,Violences intrafamiliales,Non,Oui,Oui,4,12:40,Oui,P002,Non,Non requis
+V007,33,Violences intrafamiliales,Non,Oui,Oui,2,00:35,Oui,P001,Oui,Non requis
+V008,35,Violences intrafamiliales,Non,Oui,Non,,00:10,Oui,P001,Oui,Non requis
+V009,37,Violences intrafamiliales,Oui,Non,Oui,10,14:20,Oui,P004,Non,Oui
+V010,39,Violences intrafamiliales,Non,Non,Oui,9,08:30,Oui,P004,Non,Non
+V011,41,Violences intrafamiliales,Non,Non,Non,,22:05,Oui,P004,Oui,Oui
+V012,43,Violences intrafamiliales,Non,Non,Non,,20:15,Oui,P001,Oui,Oui
+V013,45,Violences intrafamiliales,Non,Oui,Non,,23:10,Oui,P003,Oui,Non requis
+V014,47,Violences intrafamiliales,Non,Non,Non,,23:40,Oui,P002,Oui,Non
+V015,50,Violences intrafamiliales,Non,Non,Non,,21:10,Oui,P004,Oui,Oui
+V016,53,Violences intrafamiliales,Non,Oui,Oui,5,02:15,Oui,P003,Oui,Non requis
+V017,56,Violences intrafamiliales,Non,Non,Oui,8,22:55,Oui,P004,Oui,Oui
+V018,60,Violences intrafamiliales,Non,Oui,Non,,21:40,Oui,P004,Oui,Non requis
+V019,64,Violences intrafamiliales,Oui,Non,Oui,7,16:10,Oui,P003,Non,Oui
+V020,68,Violences intrafamiliales,Non,Oui,Non,,01:05,Oui,P002,Oui,Non requis
