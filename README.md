@@ -76,3 +76,87 @@ Une première expérimentation pourra être réalisée à partir de **données e
 Le prototype cherchera à montrer comment un système peut proposer des correspondances pertinentes tout en faisant apparaître les besoins pour lesquels aucune solution satisfaisante n'est disponible.
 
 **Aucune donnée personnelle réelle concernant des victimes ne sera utilisée dans ce projet.**
+
+#Prototype :
+## Premier cas d'usage : mise à l'abri après des violences intrafamiliales
+
+La première version du prototype se concentrera sur l'orientation vers un hébergement d'une victime de violences intrafamiliales nécessitant une mise à l'abri.
+
+Le système devra prendre en compte plusieurs catégories d'informations.
+
+### Données concernant la victime
+
+Pour respecter le principe de minimisation des données, le moteur de recommandation n'a pas besoin de connaître l'identité de la victime. Un identifiant fictif suffit pour le prototype.
+
+Les variables utiles pourront notamment être :
+
+* âge ;
+* type de violences ;
+* nécessité éventuelle d'un examen médical préalable ;
+* lieu de prise en charge ;
+* mobilité ou besoin de transport ;
+* présence et nombre d'enfants accompagnants ;
+* heure de prise en charge ;
+* besoin de mise à l'abri immédiate ;
+* contraintes de sécurité.
+
+### Données concernant les hébergements
+
+Pour chaque lieu fictif :
+
+* localisation ;
+* disponibilité à l'instant considéré ;
+* possibilité d'accueil nocturne et horaires d'admission ;
+* possibilité d'accueillir des enfants ;
+* conditions ou capacité d'accueil des enfants ;
+* possibilités de transport ou de taxi ;
+* distance et temps de trajet ;
+* compatibilité avec les contraintes de sécurité.
+
+### Logique de recommandation
+
+Le système distinguera trois types de critères :
+
+**1. Contraintes éliminatoires**
+
+Une ressource incompatible est écartée. Il peut s'agir notamment de l'absence de place disponible, de l'impossibilité d'accueillir les enfants accompagnants, de l'absence d'accueil nocturne lorsque celui-ci est nécessaire ou d'une incompatibilité avec une contrainte de sécurité.
+
+**2. Conditions modifiant le parcours**
+
+Certaines informations ne conduisent pas nécessairement à éliminer un hébergement mais modifient les étapes nécessaires. Par exemple, la nécessité d'un examen médical peut conduire à proposer le parcours :
+
+**prise en charge → hôpital → hébergement**
+
+plutôt que :
+
+**prise en charge → hébergement**
+
+**3. Critères de classement**
+
+Après élimination des solutions incompatibles, les ressources restantes pourront être classées selon différents critères, notamment le temps de trajet, la distance et les possibilités d'acheminement.
+
+La recommandation finale restera une **aide à la décision** : le système proposera les solutions compatibles et expliquera les raisons de leur classement, mais la décision restera sous le contrôle du professionnel.
+
+## Première logique de filtrage
+
+La première version du prototype utilise des règles explicites pour éliminer les hébergements qui ne peuvent pas répondre à la situation de la victime.
+
+```python
+for hebergement in hebergements:
+
+    if hebergement["places_disponibles"] == 0:
+        continue
+
+    if victime["accompagnee_enfant"] == "Oui" and hebergement["enfant_accepte"] == "Non":
+        continue
+
+    if victime["prise_en_charge_nocturne"] == "Oui" and hebergement["accueil_nuit"] == "Non":
+        continue
+
+    print(hebergement["hebergement_id"], "compatible")
+```
+
+Dans cette première version, un hébergement est donc écarté lorsqu'il n'a aucune place disponible, lorsqu'il ne peut pas accueillir l'enfant accompagnant la victime ou lorsqu'une prise en charge nocturne est nécessaire mais impossible.
+
+Les contraintes relatives à la distance de sécurité ne sont pas encore implémentées : les règles applicables doivent être vérifiées avant leur intégration au modèle.
+
