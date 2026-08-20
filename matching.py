@@ -18,15 +18,15 @@ for victime in victimes:
             motifs = []
 
             if int(hebergement["places_disponibles"]) == 0:
-            motifs.append("aucune place disponible")
+                motifs.append("aucune place disponible")
 
             if victime["accompagnee_enfant"] == "Oui" and hebergement["enfant_accepte"] == "Non":
-            motifs.append("enfant non accepté")
+                motifs.append("enfant non accepté")
 
             if victime["prise_en_charge_nocturne"] == "Oui" and hebergement["accueil_nuit"] == "Non":
-            motifs.append("accueil de nuit indisponible")
+                motifs.append("accueil de nuit indisponible")
 
             if not motifs:
-            print(hebergement["hebergement_id"], "COMPATIBLE")
+                print(hebergement["hebergement_id"], "COMPATIBLE")
             else:
-            print(hebergement["hebergement_id"], "INCOMPATIBLE", motifs)
+                print(hebergement["hebergement_id"], "INCOMPATIBLE", motifs)
