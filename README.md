@@ -156,6 +156,40 @@ for hebergement in hebergements:
     print(hebergement["hebergement_id"], "compatible")
 ```
 
+"Évolution du prototype : orientation vers un établissement de santé
+
+Le prototype intègre désormais une étape préalable d'orientation médicale lorsque la situation de la victime nécessite un examen médical.
+
+À partir du lieu de prise en charge de la victime, le programme :
+
+identifie les établissements de santé conventionnés ;
+compare leurs distances ;
+recommande l'établissement le plus proche ;
+affiche les autres établissements disponibles afin de conserver une logique d'aide à la décision ;
+poursuit ensuite la recherche d'un hébergement adapté.
+
+Les distances utilisées dans cette version sont des données synthétiques. Une version opérationnelle nécessiterait l'utilisation de données réelles et actualisées.
+
+Le parcours devient ainsi :
+
+Victime
+   ↓
+Examen médical nécessaire ?
+   │
+   ├── OUI → établissement de santé conventionné le plus proche
+   │                         ↓
+   └── NON ──────────────────┤
+                             ↓
+                 recherche d'hébergement
+                             ↓
+              filtrage des incompatibilités
+                             ↓
+                 solutions compatibles
+
+# Évolutions envisagées:
+
+Une évolution ultérieure pourrait intégrer les données issues de l'évaluation du danger réalisée lors du dépôt de plainte, afin d'affiner les critères d'orientation. Les hébergements compatibles pourraient également être classés selon plusieurs critères pondérés, notamment la distance, les modalités de transport et les facteurs de sécurité. Le prototype pourrait enfin être connecté à des données réelles et actualisées concernant les capacités d'hébergement.
+
 Dans cette première version, un hébergement est donc écarté lorsqu'il n'a aucune place disponible, lorsqu'il ne peut pas accueillir l'enfant accompagnant la victime ou lorsqu'une prise en charge nocturne est nécessaire mais impossible.
 
 Les contraintes relatives à la distance de sécurité ne sont pas encore implémentées : les règles applicables doivent être vérifiées avant leur intégration au modèle.
