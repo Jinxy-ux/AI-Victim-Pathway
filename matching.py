@@ -9,6 +9,9 @@ with open("hebergements_synthetiques.csv", encoding="utf-8-sig") as fichier:
 with open("lieux_prise_en_charge_synthetiques.csv", encoding="utf-8-sig") as fichier:
     lieux = list(csv.DictReader(fichier))
 
+with open("distances_sante_synthetiques.csv", encoding="utf-8-sig") as fichier:
+    distances_sante = list(csv.DictReader(fichier))
+
 for victime in victimes:
 
     if victime["victime_id"] == "V001":
