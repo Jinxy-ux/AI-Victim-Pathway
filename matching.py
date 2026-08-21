@@ -18,6 +18,20 @@ with open("etablissements_sante.csv", encoding="utf-8-sig") as fichier:
 for victime in victimes:
 
     if victime["victime_id"] == "V001":
+               
+        if victime["examen_medical_necessaire"] == "Oui":
+
+            distances_possibles = []
+
+            for distance in distances_sante:
+
+                if distance["lieu_id"] == victime["lieu_prise_en_charge_id"]:
+                    distances_possibles.append(distance)
+
+            print("Établissements conventionnés :")
+
+            for distance in distances_possibles:
+                print(distance["etablissement_id"], distance["distance_km"], "km")
 
         for hebergement in hebergements:
 
