@@ -17,8 +17,8 @@ with open("etablissements_sante.csv", encoding="utf-8-sig") as fichier:
 
 for victime in victimes:
 
-    if victime["victime_id"] == "V001":
-               
+    if victime["victime_id"] == "V004":
+
         if victime["examen_medical_necessaire"] == "Oui":
 
             distances_possibles = []
@@ -32,6 +32,23 @@ for victime in victimes:
 
             for distance in distances_possibles:
                 print(distance["etablissement_id"], distance["distance_km"], "km")
+
+            plus_proche = min(
+                distances_possibles,
+                key=lambda distance: float(distance["distance_km"])
+            )
+
+            for etablissement_sante in etablissements_sante :
+
+                if etablissement_sante["etablissement_id"] == plus_proche["etablissement_id"] :
+                    
+                    print(
+                        "Établissement recommandé :",
+                        etablissement_sante["Nom"],
+                        "-",
+                        plus_proche["distance_km"],
+                        "km"
+                    )    
 
         for hebergement in hebergements:
 
