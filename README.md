@@ -1,6 +1,15 @@
 # AI-Victim-Pathway
 How could artificial intelligence help ensure that every victim receives the right support, at the right time, rather than having to navigate a fragmented system alone?
-# AI Victim Pathway
+
+## Summary
+
+AI Victim Pathway is a prototype decision-support tool designed to assist professionals in orienting victims of domestic violence toward appropriate healthcare facilities and emergency accommodation.
+
+The program uses victim-specific information and the location where the victim is being assisted to determine whether medical care is required. When necessary, it identifies conventioned healthcare facilities, compares their distances, and recommends the nearest one.
+
+It then evaluates available accommodation facilities according to compatibility criteria such as availability, acceptance of accompanying children, and night-time reception. Incompatible facilities are excluded with an explicit reason.
+
+The current project uses synthetic data and is intended as a proof of concept, not as an operational decision-making system.
 
 ## Le constat
 
